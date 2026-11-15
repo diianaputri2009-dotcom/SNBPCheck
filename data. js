@@ -88,4 +88,41 @@ const dataAlumni = [
   { tahun: 2026, universitas: "Universitas Pendidikan Indonesia", prodi: "Teknik sipil (S1)", peringkatEligible: 34, nilai: 88.52, nilaiAsli: "88, 52" }
 ];
 
+// Menyeragamkan nama universitas
+const namaUniversitas = {
+  "IPB": "Institut Pertanian Bogor",
+  "INSITUT PERTANIAN BOGOR (IPB)": "Institut Pertanian Bogor",
+
+  "ITB": "Institut Teknologi Bandung",
+  "INSTITUT TEKNOLOGI BANDUNG": "Institut Teknologi Bandung",
+  "INSTITUT TEKNOLOGI BANDUNG CIREBON": "Institut Teknologi Bandung",
+
+  "UNPAD": "Universitas Padjadjaran",
+  "UNIVERSITAS PADJAJARAN": "Universitas Padjadjaran",
+  "UNIVERSITAS PADJADJARAN": "Universitas Padjadjaran",
+
+  "UPI": "Universitas Pendidikan Indonesia",
+  "UPI KAMPUS PURWAKARTA": "Universitas Pendidikan Indonesia",
+  "UNIVERSITAS PENDIDIKAN INDONESIA (KAMPUS PURWAKARTA)": "Universitas Pendidikan Indonesia",
+
+  "UNDIP": "Universitas Diponegoro",
+  "ITS": "Institut Teknologi Sepuluh Nopember",
+  "UGM": "Universitas Gadjah Mada",
+
+  "POLBAN(POLITEKNIK BANDUNG)": "Politeknik Negeri Bandung",
+  "POLITEKNIK BANDUNG": "Politeknik Negeri Bandung",
+  "POLITEKNIK NEGERI BANDUNG": "Politeknik Negeri Bandung",
+
+  "UNIVERITAS NEGERI SURABAYA": "Universitas Negeri Surabaya",
+  "UNIVERSITAS SIPERBANGSA KARAWANG": "Universitas Singaperbangsa Karawang"
+};
+
+dataAlumni.forEach((item) => {
+  const nama = item.universitas.trim().toUpperCase();
+
+  if (namaUniversitas[nama]) {
+    item.universitas = namaUniversitas[nama];
+  }
+});
+
 window.dataAlumni = dataAlumni;
