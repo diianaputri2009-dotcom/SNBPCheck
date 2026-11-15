@@ -1,0 +1,15 @@
+// DATABASE ALUMNI SNBPCHECK
+
+const dataAlumni = [
+
+];
+
+// DATA UNIVERSITAS
+const dataUniversitas = [
+
+];
+
+// DATA PROGRAM STUDI
+const dataProgramStudi = [
+
+];
