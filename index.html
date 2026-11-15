@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNBPCheck - Kenali Peluangmu</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f7fc;color:#202b45}
+header{background:#fff;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0000000d}
+.logo{font-size:24px;font-weight:bold;color:#3159bd}
+nav a{margin-left:20px;text-decoration:none;color:#34415c;font-size:14px}
+.hero{padding:75px 8%;background:linear-gradient(120deg,#203f91,#557ee0);color:white}
+.hero h1{font-size:42px;max-width:650px;margin-bottom:18px}
+.hero p{max-width:570px;line-height:1.7;margin-bottom:25px}
+.btn{display:inline-block;background:white;color:#3159bd;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:bold}
+section{padding:55px 8%}
+h2{margin-bottom:12px;color:#203f91}
+.sub{color:#68748b;margin-bottom:25px;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{background:white;padding:23px;border-radius:13px;box-shadow:0 4px 18px #203f9110}
+.card h3{margin:12px 0;color:#294d9e}
+.card p{color:#69758a;line-height:1.6;font-size:14px}
+form{background:white;padding:25px;border-radius:13px;max-width:600px;box-shadow:0 4px 18px #203f9110}
+label{display:block;margin:15px 0 7px;font-weight:bold}
+input,select{width:100%;padding:12px;border:1px solid #d8deea;border-radius:7px}
+button{background:#3159bd;color:white;border:0;padding:13px 20px;border-radius:7px;cursor:pointer;margin-top:18px}
+#hasil{margin-top:20px;padding:15px;background:#edf3ff;border-radius:8px;line-height:1.6}
+table{width:100%;border-collapse:collapse;background:white;margin-top:18px}
+th,td{padding:13px;text-align:left;border-bottom:1px solid #e8ebf2;font-size:14px}
+th{background:#eaf0ff;color:#24499e}
+.table-wrap{overflow-x:auto}
+footer{background:#203f91;color:white;text-align:center;padding:25px;line-height:1.8}
+@media(max-width:650px){
+header{flex-direction:column;gap:15px}
+nav a{margin:0 6px;font-size:12px}
+.hero h1{font-size:32px}
+section{padding:40px 6%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SNBPCheck</div>
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#peluang">Cek Peluang</a>
+    <a href="#alumni">Data Alumni</a>
+    <a href="#ptn">Jelajahi PTN</a>
+  </nav>
+</header>
+
+<div class="hero" id="beranda">
+  <h1>Kenali Peluangmu, Rencanakan Masa Depanmu.</h1>
+  <p>SNBPCheck membantu siswa SMA mengenal perguruan tinggi negeri, membandingkan nilai rapor, dan melihat data penerimaan alumni sebagai bahan pertimbangan memilih program studi.</p>
+  <a class="btn" href="#peluang">Mulai Sekarang</a>
+</div>
+
+<section>
+  <h2>Fitur SNBPCheck</h2>
+  <p class="sub">Berbagai fitur untuk membantu persiapan menuju perguruan tinggi.</p>
+  <div class="cards">
+    <div class="card"><h3>📊 Cek Nilai</h3><p>Hitung rata-rata nilai rapor semester 1 sampai 5.</p></div>
+    <div class="card"><h3>🎓 Data Alumni</h3><p>Lihat rekap penerimaan alumni tahun 2024, 2025, dan 2026.</p></div>
+    <div class="card"><h3>🏫 Jelajahi PTN</h3><p>Kenali perguruan tinggi negeri di Indonesia.</p></div>
+    <div class="card"><h3>📚 Program Studi</h3><p>Temukan informasi program studi untuk bahan pertimbangan.</p></div>
+  </div>
+</section>
+
+<section id="peluang">
+  <h2>Cek Rata-Rata Nilai Rapor</h2>
+  <p class="sub">Masukkan nilai rapor semester 1 sampai 5 untuk menghitung rata-rata. Hasil ini bukan prediksi atau jaminan kelulusan SNBP.</p>
+  <form id="formNilai">
+    <div id="inputNilai"></div>
+    <button type="submit">Hitung Rata-Rata</button>
+    <div id="hasil" hidden></div>
+  </form>
+</section>
+
+<section id="alumni">
+  <h2>Jejak Alumni SNBP</h2>
+  <p class="sub">Data penerimaan alumni tahun 2024–2026 akan ditampilkan di sini setelah dimasukkan.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tahun</th><th>Universitas</th><th>Program Studi</th><th>Nilai</th></tr></thead>
+      <tbody id="dataAlumni">
+        <tr><td colspan="4">Data alumni belum dimasukkan.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="ptn">
+  <h2>Jelajahi Perguruan Tinggi Negeri</h2>
+  <p class="sub">Kenali kampus impianmu dan cari informasi melalui situs resminya.</p>
+  <div class="cards">
+    <div class="card"><h3>Universitas Indonesia</h3><p>Depok, Jawa Barat</p><a href="https://www.ui.ac.id/" target="_blank">Situs resmi UI ↗️</a></div>
+    <div class="card"><h3>Institut Teknologi Bandung</h3><p>Bandung, Jawa Barat</p><a href="https://itb.ac.id/" target="_blank">Situs resmi ITB ↗️</a></div>
+    <div class="card"><h3>Universitas Padjadjaran</h3><p>Jatinangor, Jawa Barat</p><a href="https://www.unpad.ac.id/" target="_blank">Situs resmi UNPAD ↗️</a></div>
+    <div class="card"><h3>Universitas Gadjah Mada</h3><p>Yogyakarta</p><a href="https://ugm.ac.id/" target="_blank">Situs resmi UGM ↗️</a></div>
+  </div>
+</section>
+
+<footer>
+  <strong>SNBPCheck</strong><br>
+  Platform edukasi dan informasi SNBP untuk siswa SMA.<br>
+  © 2026 SNBPCheck
+</footer>
+
+<script>
+const tempat = document.getElementById("inputNilai");
+for(let i=1;i<=5;i++){
+  tempat.innerHTML += `
+    <label for="s${i}">Nilai Semester ${i}</label>
+    <input id="s${i}" type="number" min="0" max="100" step="0.01" required placeholder="Masukkan nilai semester ${i}">
+  `;
+}
+document.getElementById("formNilai").addEventListener("submit",function(e){
+  e.preventDefault();
+  let nilai=[];
+  for(let i=1;i<=5;i++){
+    const n=Number(document.getElementById("s"+i).value);
+    if(n<0||n>100||document.getElementById("s"+i).value===""){
+      alert("Masukkan nilai antara 0 sampai 100.");
+      return;
+    }
+    nilai.push(n);
+  }
+  const rata=nilai.reduce((a,b)=>a+b,0)/5;
+  const hasil=document.getElementById("hasil");
+  hasil.hidden=false;
+  hasil.innerHTML="<strong>Rata-rata nilai kamu: "+rata.toFixed(2)+"</strong><br>Gunakan hasil ini sebagai bahan evaluasi akademik. Nilai rata-rata saja tidak dapat menentukan kelulusan SNBP.";
+});
+</script>
+</body>
+</html>
