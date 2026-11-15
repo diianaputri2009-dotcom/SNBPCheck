@@ -1,0 +1,35 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tabelAlumni = document.getElementById("dataAlumni");
+
+  if (!tabelAlumni) return;
+
+  if (!window.dataAlumni || window.dataAlumni.length === 0) {
+    tabelAlumni.innerHTML =
+      '<tr><td colspan="4">Data alumni belum tersedia.</td></tr>';
+    return;
+  }
+
+  tabelAlumni.innerHTML = "";
+
+  window.dataAlumni.forEach(function (alumni) {
+    const baris = document.createElement("tr");
+
+    const data = [
+      alumni.tahun,
+      alumni.universitas,
+      alumni.prodi,
+      alumni.nilai === null
+        ? "Belum tersedia"
+        : Number(alumni.nilai).toFixed(2)
+    ];
+
+    data.forEach(function (isi) {
+      const kolom = document.createElement("td");
+      kolom.textContent = isi;
+      baris.appendChild(kolom);
+    });
+
+    tabelAlumni.appendChild(baris);
+  });
+});
