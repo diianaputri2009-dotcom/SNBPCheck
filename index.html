@@ -108,30 +108,7 @@ section{padding:40px 6%}
   © 2026 SNBPCheck
 </footer>
 
-<script>
-const tempat = document.getElementById("inputNilai");
-for(let i=1;i<=5;i++){
-  tempat.innerHTML += `
-    <label for="s${i}">Nilai Semester ${i}</label>
-    <input id="s${i}" type="number" min="0" max="100" step="0.01" required placeholder="Masukkan nilai semester ${i}">
-  `;
-}
-document.getElementById("formNilai").addEventListener("submit",function(e){
-  e.preventDefault();
-  let nilai=[];
-  for(let i=1;i<=5;i++){
-    const n=Number(document.getElementById("s"+i).value);
-    if(n<0||n>100||document.getElementById("s"+i).value===""){
-      alert("Masukkan nilai antara 0 sampai 100.");
-      return;
-    }
-    nilai.push(n);
-  }
-  const rata=nilai.reduce((a,b)=>a+b,0)/5;
-  const hasil=document.getElementById("hasil");
-  hasil.hidden=false;
-  hasil.innerHTML="<strong>Rata-rata nilai kamu: "+rata.toFixed(2)+"</strong><br>Gunakan hasil ini sebagai bahan evaluasi akademik. Nilai rata-rata saja tidak dapat menentukan kelulusan SNBP.";
-});
-</script>
+<script src="data.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
